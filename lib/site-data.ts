@@ -23,7 +23,7 @@ export const SERVICE_IMAGES: Record<ServiceKey, string> = {
 };
 
 export const PAGE_IMAGES = {
-  home: "public/hero.jpg",
+  home: "/pgn-website-main/hero.jpg",
   about:
     "https://images.pexels.com/photos/35557506/pexels-photo-35557506.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   services:
