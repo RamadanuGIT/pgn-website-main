@@ -35,7 +35,7 @@ export function SiteHeader() {
         >
           <span className="flex h-12 w-14 shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/logo-pgn.png"
+              src="public/logo-pgn.png"
               alt="Logo PT Purbaya Garda Nusantara"
               width={56}
               height={48}
