@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={font.variable}>
+    <html lang="id" className={`${font.variable} ${font.className}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

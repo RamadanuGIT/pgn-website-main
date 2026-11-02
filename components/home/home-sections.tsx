@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   UserCheck,
 } from "lucide-react";
+import Image from "next/image";
 import { PAGE_IMAGES, SERVICE_KEYS } from "@/lib/site-data";
 import { useLanguage } from "@/components/site/language-provider";
 import { Reveal } from "@/components/site/reveal";
@@ -21,43 +22,61 @@ export function HeroSection() {
 
   return (
     <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden bg-navy-950 pt-28 pb-20">
+      {/* Foto personel dengan efek blend */}
       <img
         src={PAGE_IMAGES.home}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        alt="Personel PT Purbaya Garda Nusantara"
+        className="absolute inset-y-0 right-[-4%] -z-10 h-full w-[65%] object-cover object-[right_top]"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 100%)",
+        }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-navy-950 via-navy-950/90 to-navy-900/70" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-navy-950 to-transparent" />
 
+      {/* Lapisan gradasi navy */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/90 to-transparent" />
+
+      {/* Gradasi bagian bawah */}
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-navy-950 to-transparent" />
+
+      {/* Konten */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl">
-          <div className="animate-fade-up flex items-center gap-4">
-            <span className="h-px w-12 bg-gold-400" />
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold-300">
-              {t.home.hero.eyebrow}
-            </p>
+        <div className="max-w-xl">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-[2px] w-12 bg-gold-500" />
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-gold-400">
+              Security Services Indonesia
+            </span>
           </div>
-          <h1 className="animate-fade-up mt-6 text-4xl font-bold leading-[1.1] text-white [animation-delay:100ms] sm:text-5xl lg:text-6xl">
-            {t.home.hero.headline}
+
+          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Security You Can <span className="text-gold-400">Trust</span>,
+            <br />
+            Protection You Can <span className="text-gold-400">Rely On</span>.
           </h1>
-          <p className="animate-fade-up mt-6 max-w-2xl text-lg leading-relaxed text-white/80 [animation-delay:200ms]">
-            {t.home.hero.subheadline}
+
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg">
+            PT Purbaya Garda Nusantara menyediakan jasa pengamanan profesional
+            dengan integritas, disiplin, dan komitmen untuk melindungi manusia,
+            aset, dan operasional bisnis.
           </p>
-          <div className="animate-fade-up mt-10 flex flex-col gap-4 [animation-delay:300ms] sm:flex-row">
-            <Link
-              href="/services"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold-400 px-7 py-3.5 text-sm font-semibold text-navy-950 shadow-lg shadow-gold-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-300"
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#services"
+              className="inline-flex items-center gap-3 rounded-full bg-gold-500 px-8 py-4 font-semibold text-navy-950 transition-all duration-300 hover:bg-gold-400"
             >
-              {t.home.hero.primaryCta}
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-300 hover:text-gold-300"
+              Lihat Layanan Kami →
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-full border border-white/50 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-gold-400 hover:text-gold-400"
             >
-              {t.home.hero.secondaryCta}
-            </Link>
+              Hubungi Tim Kami
+            </a>
           </div>
         </div>
       </div>
@@ -73,10 +92,12 @@ export function IntroSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
         <Reveal>
           <div className="relative">
-            <img
+            <Image
               src={PAGE_IMAGES.about}
               alt=""
               loading="lazy"
+              width={960}
+              height={1280}
               className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl sm:aspect-[5/4]"
             />
             <div className="absolute -bottom-6 -right-4 hidden rounded-xl bg-navy-950 px-6 py-5 text-white shadow-xl sm:block">
